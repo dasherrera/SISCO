@@ -115,12 +115,15 @@ namespace SISCO.Vista
         private void button2_Click(object sender, EventArgs e)
         {
             clEstudianteD ObjGuardar = new clEstudianteD();
+            foreach (DataGridViewRow Row in dgvNotas.Rows)
+            {
             ObjGuardar.Materia= dgvNotas.CurrentRow.Cells["Materia"].Value.ToString();
             ObjGuardar.Nota = dgvNotas.CurrentRow.Cells["Nota"].Value.ToString();
             ObjGuardar.Periodo = dgvNotas.CurrentRow.Cells["Periodo"].Value.ToString();
             //dgvNotas.DataSource = ObjGuardar.MtdSelectCelda(Documento);
             
-
+                ObjGuardar.MtdIngresar();
+            }
             int can = ObjGuardar.MtdModificar();
             if (can > 0)
             {
@@ -132,6 +135,17 @@ namespace SISCO.Vista
             else MessageBox.Show("Error");
         }
 
-       
+        private void button4_Click(object sender, EventArgs e)
+        {
+            clExportar Obj = new clExportar();
+            Obj.ExportarExcel(dgvNotas);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            clEstudianteD objPersona = new clEstudianteD();
+            objPersona.Documento = txtDocumento.Text;
+            dgvEstudiantes.DataSource = objPersona.Listar();
+        }
     }
 }

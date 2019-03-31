@@ -57,10 +57,10 @@
             this.lblGrado = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.lblapellido = new System.Windows.Forms.Label();
-            this.btnImprimir = new System.Windows.Forms.Button();
             this.lblnombre = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.dgvNotas = new System.Windows.Forms.DataGridView();
+            this.button3 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabCnDocente.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -115,6 +115,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Controls.Add(this.btnExportar);
             this.tabPage1.Controls.Add(this.button8);
             this.tabPage1.Controls.Add(this.button1);
@@ -330,7 +331,6 @@
             this.tabPage2.Controls.Add(this.lblGrado);
             this.tabPage2.Controls.Add(this.button4);
             this.tabPage2.Controls.Add(this.lblapellido);
-            this.tabPage2.Controls.Add(this.btnImprimir);
             this.tabPage2.Controls.Add(this.lblnombre);
             this.tabPage2.Controls.Add(this.button2);
             this.tabPage2.Controls.Add(this.dgvNotas);
@@ -372,12 +372,13 @@
             this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
             this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(530, 436);
+            this.button4.Location = new System.Drawing.Point(604, 435);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(83, 29);
             this.button4.TabIndex = 5;
             this.button4.Text = "Exportar";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // lblapellido
             // 
@@ -390,19 +391,6 @@
             this.lblapellido.Size = new System.Drawing.Size(78, 20);
             this.lblapellido.TabIndex = 39;
             this.lblapellido.Text = "Apellido:";
-            // 
-            // btnImprimir
-            // 
-            this.btnImprimir.FlatAppearance.BorderSize = 0;
-            this.btnImprimir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
-            this.btnImprimir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImprimir.Location = new System.Drawing.Point(610, 435);
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(89, 29);
-            this.btnImprimir.TabIndex = 4;
-            this.btnImprimir.Text = "Imprimir";
-            this.btnImprimir.UseVisualStyleBackColor = true;
             // 
             // lblnombre
             // 
@@ -440,6 +428,17 @@
             this.dgvNotas.Name = "dgvNotas";
             this.dgvNotas.Size = new System.Drawing.Size(772, 411);
             this.dgvNotas.TabIndex = 2;
+            // 
+            // button3
+            // 
+            this.button3.ForeColor = System.Drawing.Color.Black;
+            this.button3.Location = new System.Drawing.Point(593, 6);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 29);
+            this.button3.TabIndex = 43;
+            this.button3.Text = "Datos";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // frmDocente
             // 
@@ -496,12 +495,12 @@
         private System.Windows.Forms.DataGridView dgvEstudiantes;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dgvNotas;
         private System.Windows.Forms.Label lblapellido;
         private System.Windows.Forms.Label lblnombre;
         private System.Windows.Forms.Label lblGrado;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button3;
     }
 }

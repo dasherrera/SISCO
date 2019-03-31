@@ -60,7 +60,7 @@ namespace SISCO.Datos
         }
         public int MtdModificar()
         {
-            string consulta = "Update Persona set Materia ='" + Materia + "', " + "Periodo ='" + Periodo + "', Nota ='" + Nota + "'   where Documento ='" + Documento + "';";
+            string consulta = "Update Materia set Materia ='" + Materia + "', " + "Periodo ='" + Periodo + "', Nota ='" + Nota + "'   where Documento ='" + Documento + "';";
             int cantREG = objConexion.mtdConectado(consulta);
             return cantREG;
         }
@@ -74,7 +74,10 @@ namespace SISCO.Datos
         public DataTable MtdIngresar()
         {
             DataTable dtEnvio = new DataTable();
-            Consulta= "Insert Materia "
+            if (Materia!=null)
+            {
+                Consulta = "Insert into  Materia  values Materia where ";
+            }
             return dtEnvio;
         }
     }
