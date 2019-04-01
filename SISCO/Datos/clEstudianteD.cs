@@ -4,6 +4,7 @@ using System.Linq;
 using System.Data;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SISCO.Datos
 {
@@ -74,10 +75,12 @@ namespace SISCO.Datos
         public DataTable MtdIngresar()
         {
             DataTable dtEnvio = new DataTable();
-            if (Materia!=null)
+            if (Materia != null)
             {
                 Consulta = "Insert into  Materia  values Materia where ";
             }
+            else MessageBox.Show("Por favor ingrese un campo");
+            
             return dtEnvio;
         }
     }

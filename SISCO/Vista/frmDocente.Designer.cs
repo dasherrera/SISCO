@@ -314,7 +314,7 @@
             // 
             // dgvEstudiantes
             // 
-            this.dgvEstudiantes.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dgvEstudiantes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.dgvEstudiantes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvEstudiantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEstudiantes.GridColor = System.Drawing.SystemColors.Control;
