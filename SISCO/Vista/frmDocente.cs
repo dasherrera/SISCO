@@ -18,6 +18,10 @@ namespace SISCO.Vista
         {
             InitializeComponent();
         }
+        public void MtdCargarDatagridNota()
+        {
+
+        }
         private void frmDocente_Load(object sender, EventArgs e)
         {
             // ESTA Listando el grado en el cbxCurso
@@ -93,7 +97,7 @@ namespace SISCO.Vista
 
                 MessageBox.Show("Seleccione El DOCUMENTO");
             }
-            
+
 
             try
             {
@@ -108,18 +112,19 @@ namespace SISCO.Vista
             }
             //abir pagina 2
             this.tabCnDocente.SelectedTab = this.tabPage2;
-            
-            
+
+
         }
+
 
         private void button2_Click(object sender, EventArgs e)
         {
             clEstudianteD ObjGuardar = new clEstudianteD();
-            ObjGuardar.Materia= dgvNotas.CurrentRow.Cells["Materia"].Value.ToString();
+            ObjGuardar.Materia = dgvNotas.CurrentRow.Cells["Materia"].Value.ToString();
             ObjGuardar.Nota = dgvNotas.CurrentRow.Cells["Nota"].Value.ToString();
             ObjGuardar.Periodo = dgvNotas.CurrentRow.Cells["Periodo"].Value.ToString();
             //dgvNotas.DataSource = ObjGuardar.MtdSelectCelda(Documento);
-            
+
 
             int can = ObjGuardar.MtdModificar();
             if (can > 0)
@@ -132,6 +137,44 @@ namespace SISCO.Vista
             else MessageBox.Show("Error");
         }
 
-       
+        private void button3_Click(object sender, EventArgs e)
+        {
+            clEstudianteD objPersona = new clEstudianteD();
+            objPersona.Documento = txtDocumento.Text;
+            dgvEstudiantes.DataSource = objPersona.Listar();
+        }
+
+        private void dgvNotas_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            clEstudianteD ObjModificar = new clEstudianteD();
+            string Documento = dgvEstudiantes.CurrentRow.Cells["Documento"].Value.ToString();
+            if (Convert.ToString(dgvNotas.CurrentRow.Cells) != "")
+            {
+                if (Convert.ToString(dgvNotas.CurrentRow.Cells["Materia"].Value.ToString()) != "")
+                {
+                    if (Convert.ToString(dgvNotas.CurrentRow.Cells["Materia"].Value.ToString()) == "Matematicas")
+                    {
+
+                    }
+                }
+                if (Convert.ToString(dgvNotas.CurrentRow.Cells["Nota"].Value.ToString()) != "")
+                {
+
+                    ObjModificar.Nota = dgvNotas.CurrentRow.Cells["Nota"].Value.ToString();
+                    ObjModificar.IdNota = dgvNotas.CurrentRow.Cells["IdNota"].Value.ToString();
+                    dgvNotas.DataSource = ObjModificar.MtdModificar();
+                    clEstudianteD objTablaNueva = new clEstudianteD();
+                    dgvNotas.DataSource = objTablaNueva.MtdSelectCelda(Documento);
+
+                }
+
+
+
+                if (Convert.ToString(dgvNotas.CurrentRow.Cells) == "")
+                {
+                    MessageBox.Show("Si Esta intentando Modificar:\n Por Favor Ingrese un valor");
+                }
+            }
+        }
     }
 }

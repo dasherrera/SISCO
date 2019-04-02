@@ -11,6 +11,7 @@ namespace SISCO.Datos
     {
         clConexion objConexion = new clConexion();
         string Consulta = "";
+        public string IdNota { get; set; }
         public string Documento { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
@@ -47,34 +48,42 @@ namespace SISCO.Datos
         public DataTable MtdBuscarpor()
         {
             DataTable dtBuscar = new DataTable();
-            Consulta = "   Select Grado, IdEstudiante, Nombre, Apellidos,  Materia FROM Estudiante, Grado, Materia, MateriaGrado WHERE Materia = '" + Materia + "' and MateriaGrado.IdGrado = Grado.IdGrado  AND MateriaGrado.IdMateria = Materia.IdMateria";
+            Consulta = "   Select Grado,  Nombre, Apellidos,  Materia FROM Estudiante, Grado, Materia, MateriaGrado WHERE Materia = '" + Materia + "' and MateriaGrado.IdGrado = Grado.IdGrado  AND MateriaGrado.IdMateria = Materia.IdMateria";
             dtBuscar = objConexion.mtdDesconectado(Consulta);
             return dtBuscar;
         }
         public DataTable MtdRegistroModi()
         {
             DataTable dtRegistro = new DataTable();
-            Consulta = "select Materia, Grado from Materia inner join MateriaGrado on (Materia.IdMateria = MateriaGrado.IdMateria) inner join Grado on (MateriaGrado.IdGrado = Grado.IdGrado) where Grado = '" + Grado + "'";
+            Consulta = "select Materia, Nombre, Apellidos from Materia inner join MateriaGrado on (Materia.IdMateria = MateriaGrado.IdMateria) inner join Grado on (MateriaGrado.IdGrado = Grado.IdGrado), Estudiante  where Grado = '"+Grado+"'";
             dtRegistro = objConexion.mtdDesconectado(Consulta);
             return dtRegistro;
         }
+
+        public DataTable MtdIdNota()
+        {
+            DataTable dtEnvio = new DataTable();
+            Consulta = "Select IdNota from Nota";
+            return dtEnvio;
+        }
         public int MtdModificar()
         {
-            string consulta = "Update Persona set Materia ='" + Materia + "', " + "Periodo ='" + Periodo + "', Nota ='" + Nota + "'   where Documento ='" + Documento + "';";
+            string consulta = "Update Nota set  Nota ='" + Nota + "'   where idNota ='" + IdNota + "';";
             int cantREG = objConexion.mtdConectado(consulta);
             return cantREG;
         }
         public DataTable MtdSelectCelda(string Documento)
         {
             DataTable DtCelda = new DataTable();
-            Consulta = "SELECT Materia, Periodo,Nota  fROM Nota INNER JOIN Periodo ON (Nota.IdPeriodo= Periodo.IdPeriodo)inner join Estudiante on (Nota.IdEstudiante= Estudiante.IdEstudiante) INNER Join Materia on (Materia.IdMateria= Nota.IdMateriaGrado) where Documento='"+Documento+"'";
+            Consulta = "SELECT Materia, Periodo,Nota, IdNota  fROM Nota INNER JOIN Periodo ON (Nota.IdPeriodo= Periodo.IdPeriodo)inner join Estudiante on (Nota.IdEstudiante= Estudiante.IdEstudiante) INNER Join Materia on (Materia.IdMateria= Nota.IdMateriaGrado) where Documento='"+Documento+"'";
             DtCelda = objConexion.mtdDesconectado(Consulta);
             return DtCelda;
         }
+        
         public DataTable MtdIngresar()
         {
             DataTable dtEnvio = new DataTable();
-            Consulta= "Insert Materia "
+            Consulta = "Insert Materia ";
             return dtEnvio;
         }
     }

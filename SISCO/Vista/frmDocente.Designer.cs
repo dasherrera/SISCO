@@ -35,6 +35,7 @@
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabCnDocente = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
             this.btnExportar = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -57,7 +58,6 @@
             this.lblGrado = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.lblapellido = new System.Windows.Forms.Label();
-            this.btnImprimir = new System.Windows.Forms.Button();
             this.lblnombre = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.dgvNotas = new System.Windows.Forms.DataGridView();
@@ -115,6 +115,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Controls.Add(this.btnExportar);
             this.tabPage1.Controls.Add(this.button8);
             this.tabPage1.Controls.Add(this.button1);
@@ -131,6 +132,20 @@
             this.tabPage1.Size = new System.Drawing.Size(781, 471);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "buscar";
+            // 
+            // button3
+            // 
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.button3.ForeColor = System.Drawing.Color.Black;
+            this.button3.Location = new System.Drawing.Point(585, 6);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(83, 29);
+            this.button3.TabIndex = 14;
+            this.button3.Text = "Datos";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // btnExportar
             // 
@@ -325,12 +340,11 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.tabPage2.Controls.Add(this.pictureBox1);
             this.tabPage2.Controls.Add(this.lblGrado);
             this.tabPage2.Controls.Add(this.button4);
             this.tabPage2.Controls.Add(this.lblapellido);
-            this.tabPage2.Controls.Add(this.btnImprimir);
             this.tabPage2.Controls.Add(this.lblnombre);
             this.tabPage2.Controls.Add(this.button2);
             this.tabPage2.Controls.Add(this.dgvNotas);
@@ -344,9 +358,9 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(394, 40);
+            this.pictureBox1.Location = new System.Drawing.Point(443, 40);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(305, 233);
@@ -357,9 +371,10 @@
             // lblGrado
             // 
             this.lblGrado.AutoSize = true;
+            this.lblGrado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.lblGrado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGrado.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblGrado.Location = new System.Drawing.Point(390, 364);
+            this.lblGrado.ForeColor = System.Drawing.Color.White;
+            this.lblGrado.Location = new System.Drawing.Point(439, 364);
             this.lblGrado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGrado.Name = "lblGrado";
             this.lblGrado.Size = new System.Drawing.Size(64, 20);
@@ -372,7 +387,8 @@
             this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
             this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(530, 436);
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(616, 436);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(83, 29);
             this.button4.TabIndex = 5;
@@ -383,33 +399,20 @@
             // 
             this.lblapellido.AutoSize = true;
             this.lblapellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblapellido.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblapellido.Location = new System.Drawing.Point(390, 322);
+            this.lblapellido.ForeColor = System.Drawing.Color.White;
+            this.lblapellido.Location = new System.Drawing.Point(439, 322);
             this.lblapellido.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblapellido.Name = "lblapellido";
             this.lblapellido.Size = new System.Drawing.Size(78, 20);
             this.lblapellido.TabIndex = 39;
             this.lblapellido.Text = "Apellido:";
             // 
-            // btnImprimir
-            // 
-            this.btnImprimir.FlatAppearance.BorderSize = 0;
-            this.btnImprimir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
-            this.btnImprimir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImprimir.Location = new System.Drawing.Point(610, 435);
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(89, 29);
-            this.btnImprimir.TabIndex = 4;
-            this.btnImprimir.Text = "Imprimir";
-            this.btnImprimir.UseVisualStyleBackColor = true;
-            // 
             // lblnombre
             // 
             this.lblnombre.AutoSize = true;
             this.lblnombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblnombre.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblnombre.Location = new System.Drawing.Point(390, 287);
+            this.lblnombre.ForeColor = System.Drawing.Color.White;
+            this.lblnombre.Location = new System.Drawing.Point(439, 287);
             this.lblnombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblnombre.Name = "lblnombre";
             this.lblnombre.Size = new System.Drawing.Size(76, 20);
@@ -422,6 +425,7 @@
             this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(693, 435);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(87, 29);
@@ -438,8 +442,9 @@
             this.dgvNotas.GridColor = System.Drawing.SystemColors.Control;
             this.dgvNotas.Location = new System.Drawing.Point(8, 23);
             this.dgvNotas.Name = "dgvNotas";
-            this.dgvNotas.Size = new System.Drawing.Size(772, 411);
+            this.dgvNotas.Size = new System.Drawing.Size(406, 411);
             this.dgvNotas.TabIndex = 2;
+            this.dgvNotas.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNotas_CellEndEdit);
             // 
             // frmDocente
             // 
@@ -472,7 +477,6 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem notasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem informacionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
         private System.Windows.Forms.TabControl tabCnDocente;
@@ -496,12 +500,13 @@
         private System.Windows.Forms.DataGridView dgvEstudiantes;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dgvNotas;
         private System.Windows.Forms.Label lblapellido;
         private System.Windows.Forms.Label lblnombre;
         private System.Windows.Forms.Label lblGrado;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ToolStripMenuItem notasToolStripMenuItem;
     }
 }
