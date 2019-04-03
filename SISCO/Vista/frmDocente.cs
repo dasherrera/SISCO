@@ -143,7 +143,7 @@ namespace SISCO.Vista
             objPersona.Documento = txtDocumento.Text;
             dgvEstudiantes.DataSource = objPersona.Listar();
         }
-
+        // este evento es para editar el valor que hay en las celdas del datagridView 
         private void dgvNotas_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             clEstudianteD ObjModificar = new clEstudianteD();
@@ -157,6 +157,7 @@ namespace SISCO.Vista
 
                     }
                 }
+
                 if (Convert.ToString(dgvNotas.CurrentRow.Cells["Nota"].Value.ToString()) != "")
                 {
 
