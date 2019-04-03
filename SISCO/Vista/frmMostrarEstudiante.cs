@@ -16,5 +16,11 @@ namespace SISCO.Vista
         {
             InitializeComponent();
         }
+
+        private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            MessageBox.Show("Fila Selecionada:");
+        }
+        
     }
 }

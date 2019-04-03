@@ -35,6 +35,7 @@
             this.lblGrado = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.ptbacu = new System.Windows.Forms.PictureBox();
+            this.btnExportar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbacu)).BeginInit();
             this.SuspendLayout();
@@ -46,6 +47,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(793, 542);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_RowEnter);
             // 
             // lblducuacu
             // 
@@ -112,12 +114,26 @@
             this.ptbacu.TabIndex = 53;
             this.ptbacu.TabStop = false;
             // 
+            // btnExportar
+            // 
+            this.btnExportar.FlatAppearance.BorderSize = 0;
+            this.btnExportar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
+            this.btnExportar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnExportar.ForeColor = System.Drawing.Color.Black;
+            this.btnExportar.Location = new System.Drawing.Point(315, 441);
+            this.btnExportar.Name = "btnExportar";
+            this.btnExportar.Size = new System.Drawing.Size(83, 30);
+            this.btnExportar.TabIndex = 54;
+            this.btnExportar.Text = "Exportar";
+            this.btnExportar.UseVisualStyleBackColor = true;
+            // 
             // frmMostrarEstudiante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1328, 609);
+            this.Controls.Add(this.btnExportar);
             this.Controls.Add(this.ptbacu);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.cmbTipoGR);
@@ -143,5 +159,6 @@
         private System.Windows.Forms.Label lblGrado;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.PictureBox ptbacu;
+        private System.Windows.Forms.Button btnExportar;
     }
 }

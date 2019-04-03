@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDocente));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.notasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabCnDocente = new System.Windows.Forms.TabControl();
@@ -61,6 +60,10 @@
             this.lblnombre = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.dgvNotas = new System.Windows.Forms.DataGridView();
+            this.Informacion1 = new System.Windows.Forms.Label();
+            this.lbl2 = new System.Windows.Forms.Label();
+            this.LBL4 = new System.Windows.Forms.Label();
+            this.LBL3 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tabCnDocente.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -74,7 +77,6 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.notasToolStripMenuItem,
             this.informacionToolStripMenuItem,
             this.ayudaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -82,12 +84,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(1328, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // notasToolStripMenuItem
-            // 
-            this.notasToolStripMenuItem.Name = "notasToolStripMenuItem";
-            this.notasToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
-            this.notasToolStripMenuItem.Text = "Notas";
             // 
             // informacionToolStripMenuItem
             // 
@@ -446,12 +442,56 @@
             this.dgvNotas.TabIndex = 2;
             this.dgvNotas.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNotas_CellEndEdit);
             // 
+            // Informacion1
+            // 
+            this.Informacion1.AutoSize = true;
+            this.Informacion1.ForeColor = System.Drawing.Color.White;
+            this.Informacion1.Location = new System.Drawing.Point(925, 125);
+            this.Informacion1.Name = "Informacion1";
+            this.Informacion1.Size = new System.Drawing.Size(27, 13);
+            this.Informacion1.TabIndex = 12;
+            this.Informacion1.Text = "hola";
+            // 
+            // lbl2
+            // 
+            this.lbl2.AutoSize = true;
+            this.lbl2.ForeColor = System.Drawing.Color.White;
+            this.lbl2.Location = new System.Drawing.Point(925, 180);
+            this.lbl2.Name = "lbl2";
+            this.lbl2.Size = new System.Drawing.Size(27, 13);
+            this.lbl2.TabIndex = 13;
+            this.lbl2.Text = "hola";
+            // 
+            // LBL4
+            // 
+            this.LBL4.AutoSize = true;
+            this.LBL4.ForeColor = System.Drawing.Color.White;
+            this.LBL4.Location = new System.Drawing.Point(925, 288);
+            this.LBL4.Name = "LBL4";
+            this.LBL4.Size = new System.Drawing.Size(27, 13);
+            this.LBL4.TabIndex = 15;
+            this.LBL4.Text = "hola";
+            // 
+            // LBL3
+            // 
+            this.LBL3.AutoSize = true;
+            this.LBL3.ForeColor = System.Drawing.Color.White;
+            this.LBL3.Location = new System.Drawing.Point(925, 227);
+            this.LBL3.Name = "LBL3";
+            this.LBL3.Size = new System.Drawing.Size(27, 13);
+            this.LBL3.TabIndex = 14;
+            this.LBL3.Text = "hola";
+            // 
             // frmDocente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1328, 609);
+            this.Controls.Add(this.LBL4);
+            this.Controls.Add(this.LBL3);
+            this.Controls.Add(this.lbl2);
+            this.Controls.Add(this.Informacion1);
             this.Controls.Add(this.tabCnDocente);
             this.Controls.Add(this.menuStrip1);
             this.Name = "frmDocente";
@@ -507,6 +547,9 @@
         private System.Windows.Forms.Label lblGrado;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.ToolStripMenuItem notasToolStripMenuItem;
+        private System.Windows.Forms.Label Informacion1;
+        private System.Windows.Forms.Label lbl2;
+        private System.Windows.Forms.Label LBL4;
+        private System.Windows.Forms.Label LBL3;
     }
 }
